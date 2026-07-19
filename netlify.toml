@@ -1,0 +1,13 @@
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+[functions]
+  directory = ".netlify/functions-internal"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  force = true
+  from = "/*"
+  to = "/server/:splat"
+  status = 200
